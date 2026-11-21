@@ -1,6 +1,6 @@
 {
   "name": "dsh-billing-hud",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "Billing HUD for DeepSeek Harness: a shared peak/off-peak price calendar, the session cost beside the composer token stats, and the account balance above the sidebar avatar — each configurable from Settings.",
   "license": "MIT",
