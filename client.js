@@ -1318,50 +1318,6 @@ window.__ModuleLoader__.load({
       );
     }
 
-    // ── General-section rows ────────────────────────────────────────────────
-    // One row per display switch, inside Settings → General, so the most common
-    // decisions do not require opening the plugin's own tab. The General seat
-    // projects no label and passes no props, so a row draws its own internals.
-    function GeneralToggleRow(props) {
-      const settings = useSettings();
-      const translate = typeof props.translate === 'function' ? props.translate : null;
-      const tr = (key, params) => {
-        if (translate !== null) {
-          try {
-            return translate(key, params);
-          } catch {
-            /* fall through to the key */
-          }
-        }
-        return key;
-      };
-      const field = props.field;
-      const checked = settings[field] !== false;
-      return h('div', {
-        style: {
-          display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'space-between',
-          gap: '14px',
-          padding: '10px 0',
-        },
-      },
-        h('div', { style: { display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0 } },
-          h('span', { style: LABEL_STYLE }, tr(props.labelKey)),
-          h('span', { style: HINT_STYLE }, tr(props.hintKey)),
-        ),
-        h('input', {
-          type: 'checkbox',
-          checked,
-          'aria-label': tr(props.labelKey),
-          onChange: (event) => {
-            settingsWrite({ [field]: event.target.checked });
-          },
-          style: { marginTop: '2px', flex: 'none', cursor: 'pointer' },
-        }),
-      );
-    }
-
     // ── plugin ──────────────────────────────────────────────────────────────
     return {
       inject: ['slots', 'locale', 'remote', 'remote.account'],
@@ -1535,33 +1491,6 @@ window.__ModuleLoader__.load({
           label: () => t('settings.tab'),
           inject: () => ({ translate: t }),
         }, BillingHudSettings));
-
-        // The two display switches also live in Settings → General, one row each.
-        ctx.slots.inject('settings.general.item', () => ctx.slots.register({
-          name: 'settings.general.item',
-          id: 'billing-hud-cost',
-          order: 18,
-          locale: NS,
-          inject: () => ({
-            translate: t,
-            field: 'showCost',
-            labelKey: 'settings.showCost',
-            hintKey: 'settings.showCost.hint',
-          }),
-        }, GeneralToggleRow));
-
-        ctx.slots.inject('settings.general.item', () => ctx.slots.register({
-          name: 'settings.general.item',
-          id: 'billing-hud-balance',
-          order: 19,
-          locale: NS,
-          inject: () => ({
-            translate: t,
-            field: 'showBalance',
-            labelKey: 'settings.showBalance',
-            hintKey: 'settings.showBalance.hint',
-          }),
-        }, GeneralToggleRow));
       },
     };
   },
