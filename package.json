@@ -1,0 +1,54 @@
+{
+  "name": "dsh-billing-hud",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Billing HUD for DeepSeek Harness: a shared peak/off-peak price calendar, the session cost beside the composer token stats, and the account balance above the sidebar avatar — each configurable from Settings.",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "billing",
+    "token-cost",
+    "balance",
+    "pricing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jinquan-Leung/dsh-billing-hud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jinquan-Leung/dsh-billing-hud/issues"
+  },
+  "homepage": "https://github.com/Jinquan-Leung/dsh-billing-hud#readme",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  }
+}

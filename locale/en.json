@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Billing HUD",
+    "description": "One plugin, three things: shares DeepSeek's peak/off-peak price calendar, shows the session's estimated cost beside the composer token stats, and shows the account balance above the sidebar avatar. Every part can be turned off or tuned in Settings."
+  }
+}

@@ -1,0 +1,6 @@
+# One bundle row. Its Host half is empty; the Client half provides the
+# `priceBand` service, the composer cost readout, the sidebar balance row, and
+# the Settings page that configures all three.
+- insert:
+    - id: billing-hud
+      name: dsh-billing-hud

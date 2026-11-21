@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="Billing HUD">
+  <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="#1f2933"/>
+  <g fill="none" stroke="#8fd3a6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.6 9.6a2 2 0 0 1 2-2h9.2a2 2 0 0 1 2 2v.8H6.8"/>
+    <path d="M4.6 9.6v7.2a2 2 0 0 0 2 2h9.2a2 2 0 0 0 2-2v-4.2a2 2 0 0 0-2-2H6.8"/>
+    <path d="M15.2 14.2h1.2"/>
+  </g>
+  <g>
+    <circle cx="16.2" cy="7.1" r="3.4" fill="#ffd166"/>
+    <path d="M14.8 5.4h2.8M14.8 8.8h2.8M16.2 5.4v3.4M15.4 6.6h1.6M15.4 7.7h1.6" fill="none" stroke="#1f2933" stroke-width=".9" stroke-linecap="round"/>
+  </g>
+</svg>
