@@ -1128,12 +1128,6 @@ window.__ModuleLoader__.load({
       fontSize: '12px',
       cursor: 'pointer',
     };
-    const SECTION_TITLE_STYLE = {
-      margin: '0 0 6px',
-      fontSize: '12px',
-      fontWeight: 600,
-      color: 'var(--dsw-alias-label-primary)',
-    };
 
     function ToggleRow(props) {
       const id = 'billing-hud-' + props.name;
@@ -1215,7 +1209,6 @@ window.__ModuleLoader__.load({
         h('h3', { style: { margin: '0 0 4px', fontSize: '13px', fontWeight: 600, color: 'var(--dsw-alias-label-primary)' } }, tr('settings.heading')),
         h('p', { style: { ...HINT_STYLE, margin: '0 0 18px' } }, tr('settings.intro')),
 
-        h('h4', { style: SECTION_TITLE_STYLE }, tr('settings.showCost')),
         h(ToggleRow, {
           name: 'show-cost',
           checked: settings.showCost,
